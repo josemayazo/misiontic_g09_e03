@@ -1,28 +1,34 @@
 package test;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
-
-import beans.User;
 import connection.DBConnection;
 
-public class DBOperations {
-    public static void main(String[] args) {
+class DBOperations {
 
+    public static void main(String[] args) {
+        checkConnection();
     }
 
-    public static void checkConnection(int userId, String name, String lastName, String email, String password,
-            String phoneNumber, char userType) {
+    static void checkConnection() {
         ResultSet result = null;
         DBConnection conn = new DBConnection();
-        String sql = "SELECT table_name FROM information_schema. TABLES;";
+        String sql = "SELECT COUNT(*) AS COUNT FROM information_schema.TABLES;";
+
         try {
+
             Statement statement = conn.getConnection().createStatement();
             result = statement.executeQuery(sql);
+
+            while (result.next()) {
+
+                if (result.getInt("COUNT") > 0) {
+                    System.out.println("Database Connected Succesfully!!!!");
+                }
+
+            }
+
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         } finally {

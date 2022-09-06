@@ -24,6 +24,9 @@ nbdist/
 nbactions.xml
 nb-configuration.xml
 
+# VS Code #
+.vscode
+
 # Class Files #
 *.class
 
@@ -33,3 +36,4 @@ nb-configuration.xml
 *.ear
 
 .settings/
+src/main/resources/db.properties

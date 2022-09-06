@@ -2,18 +2,29 @@ package connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.util.Properties;
 
 public class DBConnection {
 
-    final String databaseName = "railway";
-    final String mySqlHost = "containers-us-west-31.railway.app";
-    final String port = "5485";
-    final String user = "root";
-    final String password = "LOfqH9RMOiy9szODNGYY";
+    String databaseName;
+    String mySqlHost;
+    String port;
+    String user;
+    String password;
     Connection connection;
 
     public DBConnection() {
+
+        Properties props = new Properties();
         try {
+            props.load(DBConnection.class.getResourceAsStream("/db.properties"));
+
+            this.databaseName = (String) props.get("MYSQLDATABASE");
+            this.mySqlHost = (String) props.get("MYSQLHOST");
+            this.port = (String) props.get("MYSQLPORT");
+            this.user = (String) props.get("MYSQLUSER");
+            this.password = (String) props.get("MYSQLPASSWORD");
+
             Class.forName("com.mysql.jdbc.Driver");
 
             // Local db
@@ -22,12 +33,12 @@ public class DBConnection {
 
             // Remote db
             String url = String.format("jdbc:mysql://%s:%s/%s", this.mySqlHost, this.port, this.databaseName);
-
             connection = DriverManager.getConnection(url, this.user, this.password);
             System.out.println("***** Connection: Up! ******");
         } catch (Exception e) {
             System.out.println("***** Connection: Error! ******");
-
+            System.out.println(e);
+            System.out.println("*******************************");
         }
     }
 
