@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+:root {
+
+    /* #10197A */
+        --color-primary-900: #10197a;
+    
+    /* #1A2793 */
+        --color-primary-800: #1a2793;
+    
+    /* #2A3BB7 */
+        --color-primary-700: #2a3bb7;
+    
+    /* #3D53DB */
+        --color-primary-600: #3d53db;
+    
+    /* #546FFF */
+        --color-primary-500: #546fff;
+    
+    /* #7E95FF */
+        --color-primary-400: #7e95ff;
+    
+    /* #98ABFF */
+        --color-primary-300: #98abff;
+    
+    /* #BAC8FF */
+        --color-primary-200: #bac8ff;
+    
+    /* ##DCE4FF */
+        --color-primary-100: #dce4ff;
+    
+    /* #FFFFFF */
+        --color-primary-0: #ffffff;
+    
+    /* #3B6506 */
+        --color-success-900: #3b6506;
+    
+    /* #4C7A0B */
+        --color-success-800: #4c7a0b;
+    
+    /* #659711 */
+        --color-success-700: #659711;
+    
+    /* #7FB519 */
+        --color-success-600: #7fb519;
+    
+    /* #9CD323 */
+        --color-success-500: #9cd323;
+    
+    /* #BCE455 */
+        --color-success-400: #bce455;
+    
+    /* #D3F178 */
+        --color-success-300: #d3f178;
+    
+    /* #E8FAA6 */
+        --color-success-200: #e8faa6;
+    
+    /* #F5FCD2 */
+        --color-success-100: #f5fcd2;
+    
+    /* #7A0619 */
+        --color-error-900: #7a0619;
+    
+    /* #930B16 */
+        --color-error-800: #930b16;
+    
+    /* #B71112 */
+        --color-error-700: #b71112;
+    
+    /* #DB2719 */
+        --color-error-600: #db2719;
+    
+    /* #FF4423 */
+        --color-error-500: #ff4423;
+    
+    /* #FF7F59 */
+        --color-error-400: #ff7f59;
+    
+    /* #FFA37A */
+        --color-error-300: #ffa37a;
+    
+    /* #FFC8A6 */
+        --color-error-200: #ffc8a6;
+    
+    /* #FFE7D3 */
+        --color-error-100: #ffe7d3;
+    
+    /* #7A4D0B */
+        --color-warning-900: #7a4d0b;
+    
+    /* #936312 */
+        --color-warning-800: #936312;
+    
+    /* #B7821D */
+        --color-warning-700: #b7821d;
+    
+    /* #DBA32A */
+        --color-warning-600: #dba32a;
+    
+    /* #FFC73A */
+        --color-warning-500: #ffc73a;
+    
+    /* #FFD96B */
+        --color-warning-400: #ffd96b;
+    
+    /* #FFE488 */
+        --color-warning-300: #ffe488;
+    
+    /* #FFEFB0 */
+        --color-warning-200: #ffefb0;
+    
+    /* #FFF8D7 */
+        --color-warning-100: #fff8d7;
+    
+    /* #102E7A */
+        --color-information-900: #102e7a;
+    
+    /* #1A4393 */
+        --color-information-800: #1a4393;
+    
+    /* #2A60B7 */
+        --color-information-700: #2a60b7;
+    
+    /* #3D81DB */
+        --color-information-600: #3d81db;
+    
+    /* #54A6FF */
+        --color-information-500: #54a6ff;
+    
+    /* #7EC2FF */
+        --color-information-400: #7ec2ff;
+    
+    /* #98D3FF */
+        --color-information-300: #98d3ff;
+    
+    /* #BAE5FF */
+        --color-information-200: #bae5ff;
+    
+    /* #DCF3FF */
+        --color-information-100: #dcf3ff;
+    
+    /* ##030410 */
+        --color-secondary-900: #030410;
+    
+    /* ##060713 */
+        --color-secondary-800: #060713;
+    
+    /* ##0A0A18 */
+        --color-secondary-700: #0a0a18;
+    
+    /* ##0E0F1D */
+        --color-secondary-600: #0e0f1d;
+    
+    /* ##141522 */
+        --color-secondary-500: #141522;
+    
+    /* ##54577A */
+        --color-secondary-400: #54577a;
+    
+    /* ##8E92BC */
+        --color-secondary-300: #8e92bc;
+    
+    /* ##C2C6E8 */
+        --color-secondary-200: #c2c6e8;
+    
+    /* ##DFE1F3 */
+        --color-secondary-100: #dfe1f3;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-12 {
+        font-size:0.75rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        letter-spacing:-0.01em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-14 {
+        font-size:0.875rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-16 {
+        font-size:1rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-18 {
+        font-size:1.125rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-20 {
+        font-size:1.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-24 {
+        font-size:1.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-32 {
+        font-size:2rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-36 {
+        font-size:2.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-regular-type-40 {
+        font-size:2.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps */
+    .text-style-regular-type-72 {
+        font-size:4.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:400;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.04em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-12 {
+        font-size:0.75rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-14 {
+        font-size:0.875rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-16 {
+        font-size:1rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-18 {
+        font-size:1.125rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-20 {
+        font-size:1.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-24 {
+        font-size:1.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-32 {
+        font-size:2rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-36 {
+        font-size:2.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-medium-type-40 {
+        font-size:2.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps */
+    .text-style-medium-type-72 {
+        font-size:4.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:500;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-12 {
+        font-size:0.75rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-14 {
+        font-size:0.875rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-16 {
+        font-size:1rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-18 {
+        font-size:1.125rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-20 {
+        font-size:1.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-24 {
+        font-size:1.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-32 {
+        font-size:2rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-36 {
+        font-size:2.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-semibold-type-40 {
+        font-size:2.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps */
+    .text-style-semibold-type-72 {
+        font-size:4.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:600;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-12 {
+        font-size:0.75rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-14 {
+        font-size:0.875rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-16 {
+        font-size:1rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.02em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-18 {
+        font-size:1.125rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-20 {
+        font-size:1.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-24 {
+        font-size:1.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-32 {
+        font-size:2rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-36 {
+        font-size:2.25rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps over the lazy dog */
+    .text-style-bold-type-40 {
+        font-size:2.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
+    
+    /* The quick brown fox jumps */
+    .text-style-bold-type-72 {
+        font-size:4.5rem;
+        font-family:"Plus Jakarta Sans";
+        font-weight:700;
+        font-style:normal;
+        line-height:150%;
+        letter-spacing:-0.03em;
+        text-decoration:none;
+        text-transform:none;
+    }
