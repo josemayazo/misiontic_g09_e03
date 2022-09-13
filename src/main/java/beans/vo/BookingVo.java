@@ -24,6 +24,7 @@ public class BookingVo {
     }
 
     public void setState(String state) {
+        // check if
         this.state = state;
     }
 

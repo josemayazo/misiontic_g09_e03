@@ -19,6 +19,16 @@ public class UserVo {
         this.type = type;
     }
 
+    public UserVo(int id, String name, String lastName) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastName;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
     public String getName() {
         return name;
     }

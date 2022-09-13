@@ -16,6 +16,10 @@ public class ServiceProviderVo extends UserVo {
         super(id, name, lastName, email, password, phoneNumber, type);
     }
 
+    public ServiceProviderVo(int id, String name, String lastName) {
+        super(id, name, lastName);
+    }
+
     public void createService(ServiceVo newService) {
         this.serviceList.add(newService);
     }
@@ -42,6 +46,15 @@ public class ServiceProviderVo extends UserVo {
                 service.value = value;
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        String object = String.format(
+                "ServiceProvider {id: %s, name: %s, lastName: %s, email: %s, password: %s, phoneNumber: %s, type: %s, serviceList}",
+                this.id, this.name, this.lastname, this.email, this.password, this.phoneNumber, this.type,
+                this.serviceList.toString());
+        return super.toString();
     }
 
 }

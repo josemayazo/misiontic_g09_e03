@@ -1,6 +1,8 @@
 package test;
 
 import beans.vo.ServiceProviderVo;
+
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,11 +10,6 @@ import connection.DBConnection;
 import beans.vo.ServiceVo;
 
 class DBOperations {
-
-    public static void main(String[] args) {
-        checkConnection();
-    }
-
     static void checkConnection() {
         ResultSet result = null;
         DBConnection conn = new DBConnection();
@@ -37,46 +34,84 @@ class DBOperations {
             conn.turnOff();
         }
     }
-    
-    public static void actualizarServicio(int id,  String name, String description){
+
+    public static void actualizarServicio(int id, String name, String description) {
         DBConnection conn = new DBConnection();
-        String sql ="UPDATE servicio SET nombre_servicio='" + name + "'WHERE id_servicio="+id;
+        String sql = "UPDATE servicio SET nombre_servicio='" + name + "'WHERE id_servicio=" + id;
         try {
             Statement st = conn.getConnection().createStatement();
             st.executeUpdate(sql);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
-        }
-        finally{
+        } finally {
             conn.turnOff();
         }
     }
 
-    public static void listarServicio(){
+    public void listarServicio() {
+        ResultSet result = null;
         DBConnection conn = new DBConnection();
-        String sql ="SELECT * FROM servicio";
+        // String sql = "SELECT * FROM servi.servicio;";
+        String sql = "SELECT servicio.* , user.user_id, user.nombre, user.apellido FROM servi.servicio JOIN servi.user ON servicio.user_id = user.user_id;";
         try {
             Statement st = conn.getConnection().createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                int id=rs.getInt("id_servicio");
-                ServiceProviderVo serviceProvider = (ServiceProviderVo) rs.getObject(sql);
-                String name= rs.getString("nombre_servicio");
-                String description =rs.getString("descripcion");
-                String category=rs.getString("categoria");
-                String phoneNumer =rs.getString("telefono");
-                String city=rs.getString("ciudad");
-                String address=rs.getString("direccion");
-                Double value= rs.getDouble("valor");
-                ServiceVo servicios = new ServiceVo(id,serviceProvider, name, description,category,phoneNumer, city, address, value);
+            result = st.executeQuery(sql);
+            while (result.next()) {
+                int id = result.getInt("id_servicio");
+                // result.getObject(sql);
+                int idSericeProvider = result.getInt("user_id");
+                String serviceProviderName = result.getString("nombre");
+                String serviceProviderLastname = result.getString("apellido");
+                String name = result.getString("nombre_servicio");
+                String description = result.getString("descripcion");
+                String category = result.getString("categoria");
+                String phoneNumer = result.getString("telefono");
+                String city = result.getString("ciudad");
+                String address = result.getString("direccion");
+                Double value = result.getDouble("valor");
+                ServiceVo servicios = new ServiceVo(id,
+                        new ServiceProviderVo(idSericeProvider, serviceProviderName, serviceProviderLastname), name,
+                        description,
+                        category, phoneNumer, city,
+                        address, value);
                 System.out.println(servicios.toString());
             }
             st.executeQuery(sql);
-        } catch (Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
-        }
-        finally{
+        } finally {
             conn.turnOff();
 
+        }
     }
-}}
+
+    ServiceProviderVo getServiceProviderVo(int userID) {
+        ServiceProviderVo serviceProvider = new ServiceProviderVo(userID, "", "");
+        ResultSet result = null;
+        DBConnection conn = new DBConnection();
+        String sql = "SELECT * FROM servi.user WHERE user_id = ?;";
+
+        try {
+
+            PreparedStatement statement = conn.getConnection().prepareStatement(sql);
+            statement.setInt(1, userID);
+            result = statement.executeQuery();
+
+            while (result.next()) {
+
+                serviceProvider.setName(result.getString("nombre"));
+                serviceProvider.setLastname(result.getString("apellido"));
+
+                return serviceProvider;
+            }
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        } finally {
+            conn.turnOff();
+        }
+
+        return serviceProvider;
+    }
+
+}

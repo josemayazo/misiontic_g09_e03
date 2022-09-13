@@ -81,8 +81,14 @@ public class ServiceVo {
         this.value = value;
     }
 
-    
-    
-    
+    @Override
+    public String toString() {
+
+        String object = String.format(
+                "ServiceVo {id: %s, serviceProviderId: %s, name: %s, description: %s, category: %s, phoneNumer: %s, city: %s, address: %s, value: %s}",
+                this.id, this.serviceProvider.getId(), this.name, this.description, this.category, this.phoneNumer,
+                this.city, this.address, this.value);
+        return object;
+    }
 
 }
