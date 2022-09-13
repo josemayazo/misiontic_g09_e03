@@ -35,12 +35,16 @@ class DBOperations {
         }
     }
 
-    public static void actualizarServicio(int id, String name, String description) {
+    public  void actualizarServicio(int id, String name, String description) {
+        
         DBConnection conn = new DBConnection();
-        String sql = "UPDATE servicio SET nombre_servicio='" + name + "'WHERE id_servicio=" + id;
+        String sql = "UPDATE servicio SET nombre_servicio=? , descripcion=? WHERE id_servicio=? ";
         try {
-            Statement st = conn.getConnection().createStatement();
-            st.executeUpdate(sql);
+            PreparedStatement st = conn.getConnection().prepareStatement(sql);
+            st.setString(1,name);
+            st.setString(2,description);
+            st.setInt(3,id);
+            st.executeUpdate();
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         } finally {
