@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 
 import beans.dao.UserDao;
 import beans.vo.UserVo;
+import java.sql.ResultSetMetaData;
 
 public class UserController implements UserInterface {
 
@@ -38,12 +39,44 @@ public class UserController implements UserInterface {
                 String lastName = result.getString("apellido");
 
                 UserVo user = new UserVo(id, name, lastName);
-                return gson.toJson(user);
+                String resultString = gson.toJson(user);
+                return "{\"exists\":true, \"user\":" + resultString + "}";
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return null;
+        return "{\"exists\":0}";
+    }
+
+    @Override
+    public String register(String name, String lastname, String email,
+            String password, String phoneNumber, char userType) {
+
+        Gson gson = new Gson();
+        ResultSet result = null;
+        try {
+            result = UserDao.register(this.conn, name, lastname, email, password, phoneNumber, userType);
+            ResultSetMetaData resultMetadata = result.getMetaData();
+            if (resultMetadata.getColumnName(1) == "RESULT") {
+                return gson.toJson("{\"result\": \"user already exists\"}");
+            }
+            
+            while (result.next()) {
+                int _id = result.getInt("user_id");
+                String _name = result.getString("nombre");
+                String _lastname = result.getString("apellido");
+                String _email = result.getString("email");
+                String _phoneNumber = result.getString("telefono");
+                char _userType =  result.getString("tipo_usuario").charAt(0);
+
+                UserVo registeredUser = new UserVo(_id, _name, _lastname, _email, _phoneNumber, _userType);
+                String resString  = gson.toJson(registeredUser);
+                return "{\"registered\": true, \"user\":" + resString + "}";
+            }
+
+        } catch (Exception e) {
+        }
+        return "";
     }
 }

@@ -3,13 +3,16 @@ package servlets;
 import controller.UserController;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "ServletUserLogin", urlPatterns = {"/ServletUserLogin"})
+@MultipartConfig
 public class ServletUserLogin extends HttpServlet {
 
     public ServletUserLogin() {
@@ -19,6 +22,8 @@ public class ServletUserLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         UserController userController = new UserController();
+        
+  
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 

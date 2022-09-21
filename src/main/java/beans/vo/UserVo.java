@@ -18,6 +18,15 @@ public class UserVo {
         this.phoneNumber = phoneNumber;
         this.type = type;
     }
+    
+    public UserVo(int id, String name, String lastName, String email, String phoneNumber, char type) {
+        this.id = id;
+        this.name = name;
+        this.lastname = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.type = type;
+    }
 
     public UserVo(int id, String name, String lastName) {
         this.id = id;
