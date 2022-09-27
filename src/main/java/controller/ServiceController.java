@@ -94,4 +94,8 @@ public class ServiceController implements ServiceInterface{
         }
         return "";
     }
+
+    public String create(String id, String name, String description, String category, String phoneNumber, String city, String address, String value) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
