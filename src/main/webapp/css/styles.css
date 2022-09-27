@@ -11286,3 +11286,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+div.contenedor {
+  width: 33.33%;
+}
+
+button.centrado {
+  width: 110px; /* Para que no se rompa en dos líneas, y lo translade tal cual. */
+  margin-left: 50%;
+  transform: translateX(-50%);
+}

@@ -2,86 +2,89 @@
 <html>
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Servi - Home</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/vista-de-calle.gif" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
+        <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+        
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        
+            .b-example-divider {
+                height: 3rem;
+                background-color: rgba(0, 0, 0, .1);
+                border: solid rgba(0, 0, 0, .15);
+                border-width: 1px 0;
+                box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+            }
+        
+            .b-example-vr {
+                flex-shrink: 0;
+                width: 1.5rem;
+                height: 100vh;
+            }
+        
+            .bi {
+                vertical-align: -.125em;
+                fill: currentColor;
+            }
+        
+            .nav-scroller {
+                position: relative;
+                z-index: 2;
+                height: 2.75rem;
+                overflow-y: hidden;
+            }
+        
+            .nav-scroller .nav {
+                display: flex;
+                flex-wrap: nowrap;
+                padding-bottom: 1rem;
+                margin-top: -1px;
+                overflow-x: auto;
+                text-align: center;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="css/signin.css" rel="stylesheet">
+        <script defer src="js/login.js"></script>
     </head>
 
-    <body>
+    <body class="login">
 
-         <!-- Navigation-->
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid px-3">
-                <a href="index.html" class="navbar-brand"><img src="./assets/svg/logo.svg" alt="Servi Logo" class="w-auto h-25"></a>
-                <form class="d-flex">
-                    <button class="btn btn- btn-primary me-2" type="button">Inicio</button>
-                </form>
-            </div>
-         </nav>
+        <!--Main-->
+        <main class="form-signin w-100 m-auto">
+            <form action="index.html" class="loginForm">
+                <img class="mb-4" src="assets/svg/logo.svg" alt="" width="120" height="100" url="login.html">
+                <h1 class="h3 mb-3 fw-normal">Ingrese, por favor</h1>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-            crossorigin="anonymous"></script>
-
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Servicios a su medida</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">Cuente con los mejores servicios para su hogar, en un solo lugar</p>
+                <div class="form-floating">
+                    <input type="username" class="form-control" id="username" placeholder="username">
+                    <label for="floatingInput">Usuario</label>
+                    <span class="error-message"></span>
                 </div>
-            </div>
-        </header>
-
-        <div class = "container py-3">
-            <div class = "card my-5">
-                <div class = "card-body">
-                    <div class = "row m-3">
-                        <div class = "col-md-6 bg-login-image"></div>
-                        <div class = "col-md-6">
-                            <h1 class = "h4 text-gray-900 my-3">Bienvenido</h1>
-                            <form id = "form-login">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="Usuario" placeholder="Usuario" required>
-                                </div>
-                                <br>
-                                <div class="form-group">
-                                    <input type="password" class="form-control" id="Contrasena" placeholder="Contraseña" required>
-                                </div>
-                                <br>
-                                <button type="submit" class="btn btn-primary btn-block" id = "BTNENTRAR">Ingresar</button>
-                                <hr>
-                            </form>
-                        </div>
-                    </div>
-                    <a href="registro.html">¿Aún no tienes cuenta? REGISTRATE!!!</a>
-                    <div id="login-error" class="alert alert-danger d-none" role="alert">Usuario y Contraseña Incorrectos</div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <label for="floatingPassword">Contraseña</label>
+                    <span class="error-message"></span>
                 </div>
-            </div>
-        </div>
-
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+                <p class="mt-5 mb-3 text-muted">Copyright &copy; Servi. 2022</p>
+            </form>
+        </main>
     </body>
-
-    <!-- Footer-->
-    <footer class="py-5 bg-dark">
-        <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Equipo 3, Grupo 9. MinTIC UTP. 2022</p></div>
-    </footer>
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-
 </html>
