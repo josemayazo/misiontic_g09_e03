@@ -88,6 +88,10 @@ public class ServiceVo {
     public void setValue(Double value) {
         this.value = value;
     }
+    
+    public int getServiceProviderId(){
+        return this.serviceProvider.getId();
+    }
 
     @Override
     public String toString() {

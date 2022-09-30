@@ -19,6 +19,8 @@ public class ServiceProviderVo extends UserVo {
     public ServiceProviderVo(int id, String name, String lastName) {
         super(id, name, lastName);
     }
+    
+ 
 
     public void createService(ServiceVo newService) {
         this.serviceList.add(newService);
