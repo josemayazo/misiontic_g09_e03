@@ -68,15 +68,69 @@ public class ServiceDao {
             preparedStat.setString(6, service.getCity());
             preparedStat.setString(7, service.getAddress());
             preparedStat.setDouble(8, service.getValue());
-            
+
             int numRowsAffected = preparedStat.executeUpdate();
-            
+
             result = (numRowsAffected > 0);
-            
+
             return result;
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return result;
     }
+    
+    public static Boolean editService(Connection conn, ServiceVo service) {
+        Boolean result = false;
+        try {
+            String sql = "UPDATE servi.servicio \n"
+                    + "SET nombre_servicio = ?, descripcion = ?, categoria = ?, "
+                    + "telefono = ?, ciudad = ?, direccion = ?, valor = ?\n"
+                    + "WHERE id_servicio = ?;";
+            PreparedStatement preparedStat = conn.prepareStatement(sql);
+            preparedStat.setString(1, service.getName());
+            preparedStat.setString(2, service.getDescription());
+            preparedStat.setString(3, service.getCategory());
+            preparedStat.setString(4, service.getPhoneNumer());
+            preparedStat.setString(5, service.getCity());
+            preparedStat.setString(6, service.getAddress());
+            preparedStat.setDouble(7, service.getValue());
+            preparedStat.setInt(8, service.getId());
+            
+            
+            int numRowsAffected = preparedStat.executeUpdate();
+
+            result = (numRowsAffected > 0);
+
+            return result;
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    public static Boolean deleteService(Connection conn, ServiceVo service) {
+        Boolean result = false;
+
+        try {
+            String sql = "DELETE FROM servi.servicio WHERE servicio.id_servicio = ?;";
+            PreparedStatement preparedStat = conn.prepareStatement(sql);
+            preparedStat.setInt(1, service.getId());
+
+            int numRowsAffected = preparedStat.executeUpdate();
+
+            result = (numRowsAffected > 0);
+
+            return result;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    
 }

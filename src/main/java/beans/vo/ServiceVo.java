@@ -1,6 +1,7 @@
 package beans.vo;
 
 public class ServiceVo {
+
     int id;
     ServiceProviderVo serviceProvider;
     String name;
@@ -10,6 +11,10 @@ public class ServiceVo {
     String city;
     String address;
     Double value;
+
+    public ServiceVo(int id) {
+        this.id = id;
+    }
 
     public ServiceVo(int id, ServiceProviderVo serviceProvider, String name, String description, String category,
             String phoneNumer,
@@ -24,13 +29,17 @@ public class ServiceVo {
         this.address = address;
         this.value = value;
     }
-    
+
     public ServiceVo(int id, String title, ServiceProviderVo serviceProvider, String city, Double value) {
         this.id = id;
         this.serviceProvider = serviceProvider;
         this.name = title;
         this.city = city;
         this.value = value;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public String getName() {
@@ -88,8 +97,8 @@ public class ServiceVo {
     public void setValue(Double value) {
         this.value = value;
     }
-    
-    public int getServiceProviderId(){
+
+    public int getServiceProviderId() {
         return this.serviceProvider.getId();
     }
 

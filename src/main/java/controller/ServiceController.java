@@ -52,12 +52,12 @@ public class ServiceController {
                 services.add(serviceJson);
             }
 
-            return "{services: [" + String.join(",", services) + "]}";
+            return "{\"services\": [" + String.join(",", services) + "]}";
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return "{services: []}";
+        return "{\"services\": []}";
 
     }
 
@@ -86,37 +86,70 @@ public class ServiceController {
                 services.add(serviceJson);
             }
 
-            return "{services: [" + String.join(",", services) + "]}";
+            return "{\"services\": [" + String.join(",", services) + "]}";
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        return "{services: []}";
+        return "{\"services\": []}";
 
     }
 
-    /*
-    
-    user_id, nombre_servicio, "
-                    + "descripcion, categoria, telefono, ciudad, direccion, valor
-    
-     */
     public String createService(int userId, String serviceName,
             String serviceDescripcion, String serviceCategory, String servicePhoneNumber,
             String serviceCity, String serviceAddress, Double serviceValue) {
-        Gson gson = new Gson();
+
         boolean result = false;
 
         try {
             ServiceProviderVo servProv = new ServiceProviderVo(userId, "", "");
             ServiceVo service = new ServiceVo(userId, servProv, serviceName, serviceDescripcion, serviceCategory, servicePhoneNumber, serviceCity, serviceAddress, serviceValue);
             result = ServiceDao.createService(conn, service);
-            return "{inserted: "+result+"}";
+            return "{\"inserted\": " + result + "}";
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        return "{inserted: "+result+"}";
+        return "{\"inserted\": " + result + "}";
+    }
+
+    public String deleteService(int serviceId) {
+
+        boolean result = false;
+
+        try {
+            ServiceVo service = new ServiceVo(serviceId);
+
+            result = ServiceDao.deleteService(this.conn, service);
+            return "{\"deleted\": " + result + "}";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return "{\"deleted\": " + result + "}";
+    }
+
+    public String editService(int serviceId, String serviceName, String serviceDescripcion,
+            String serviceCategory, String servicePhoneNumber,
+            String serviceCity, String serviceAddress, Double serviceValue) {
+        
+        boolean result = false;
+        ServiceProviderVo serviceProv = new ServiceProviderVo(0, "", "");
+        try {
+            ServiceVo service = new ServiceVo(serviceId, serviceProv, serviceName, 
+                    serviceDescripcion, serviceCategory, servicePhoneNumber, 
+                    serviceCity, serviceAddress, serviceValue);
+            result = ServiceDao.editService(conn, service);
+            
+            return "{\"updated\": " + result + "}";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return "{\"updated\": " + result + "}";
+
     }
 
 }
