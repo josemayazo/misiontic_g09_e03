@@ -5,11 +5,11 @@
  */
 package servlets;
 
+import controller.ServiceController;
 import controller.UserController;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,28 +19,18 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jose_
  */
-@WebServlet(name = "ServletUserRegister", urlPatterns = {"/ServletUserRegister"})
-@MultipartConfig
-public class ServletUserRegister extends HttpServlet {
+@WebServlet(name = "ServletListServices", urlPatterns = {"/ServletListServices"})
+public class ServletListServices extends HttpServlet {
 
-    public ServletUserRegister() {
-        super();
-    }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserController userController = new UserController();
-
-        String name = request.getParameter("name");
-        String lastname = request.getParameter("lastname");
-        String email = request.getParameter("email");
-        String password = request.getParameter("password");
-        String phoneNumber = request.getParameter("phoneNumber");
-        String userType = request.getParameter("userType");
-
-
-        String result = userController.register(name, lastname, email, password, phoneNumber, userType.charAt(0));
+        
+        ServiceController servController = new ServiceController();
+        
+        String result = servController.listServices();
         PrintWriter out = response.getWriter();
 
         response.setContentType("application/json");
@@ -49,13 +39,6 @@ public class ServletUserRegister extends HttpServlet {
         out.flush();
     }
     
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        doGet(request, response);
-    }
-
     @Override
     public String getServletInfo() {
         return "Short description";

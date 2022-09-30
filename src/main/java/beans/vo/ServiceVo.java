@@ -24,6 +24,14 @@ public class ServiceVo {
         this.address = address;
         this.value = value;
     }
+    
+    public ServiceVo(int id, String title, ServiceProviderVo serviceProvider, String city, Double value) {
+        this.id = id;
+        this.serviceProvider = serviceProvider;
+        this.name = title;
+        this.city = city;
+        this.value = value;
+    }
 
     public String getName() {
         return name;
@@ -79,6 +87,10 @@ public class ServiceVo {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+    
+    public int getServiceProviderId(){
+        return this.serviceProvider.getId();
     }
 
     @Override

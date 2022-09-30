@@ -38,8 +38,9 @@ public class UserController implements UserInterface {
                 String name = result.getString("nombre");
                 String lastName = result.getString("apellido");
 
-                UserVo user = new UserVo(id, name, lastName);
+                UserVo user = new UserVo(id, name, lastName, email);
                 String resultString = gson.toJson(user);
+                System.out.println(resultString);
                 return "{\"exists\":true, \"user\":" + resultString + "}";
             }
         } catch (SQLException e) {
@@ -61,21 +62,22 @@ public class UserController implements UserInterface {
             if (resultMetadata.getColumnName(1) == "RESULT") {
                 return gson.toJson("{\"result\": \"user already exists\"}");
             }
-            
+
             while (result.next()) {
                 int _id = result.getInt("user_id");
                 String _name = result.getString("nombre");
                 String _lastname = result.getString("apellido");
                 String _email = result.getString("email");
                 String _phoneNumber = result.getString("telefono");
-                char _userType =  result.getString("tipo_usuario").charAt(0);
+                char _userType = result.getString("tipo_usuario").charAt(0);
 
                 UserVo registeredUser = new UserVo(_id, _name, _lastname, _email, _phoneNumber, _userType);
-                String resString  = gson.toJson(registeredUser);
+                String resString = gson.toJson(registeredUser);
                 return "{\"registered\": true, \"user\":" + resString + "}";
             }
 
         } catch (Exception e) {
+            e.printStackTrace();
         }
         return "";
     }

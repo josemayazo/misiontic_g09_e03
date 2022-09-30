@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "ServletUserLogin", urlPatterns = {"/ServletUserLogin"})
+@WebServlet(name = "ServletUserLogin", urlPatterns = { "/ServletUserLogin" })
 @MultipartConfig
 public class ServletUserLogin extends HttpServlet {
 
@@ -22,18 +22,17 @@ public class ServletUserLogin extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         UserController userController = new UserController();
-        
-  
+
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
         String result = userController.login(email, password);
         PrintWriter out = response.getWriter();
-        
+
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
         out.print(result);
-        out.flush(); 
+        out.flush();
     }
 
     @Override
