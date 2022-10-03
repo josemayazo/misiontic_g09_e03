@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 
 import beans.dao.UserDao;
 import beans.vo.UserVo;
+import java.io.Reader;
 import java.sql.ResultSetMetaData;
 
 public class UserController implements UserInterface {
@@ -37,14 +38,16 @@ public class UserController implements UserInterface {
                 int id = result.getInt("user_id");
                 String name = result.getString("nombre");
                 String lastName = result.getString("apellido");
+                String type = result.getString("tipo_usuario");
+                UserVo user = new UserVo(id, name, lastName, type.charAt(0));
 
-                UserVo user = new UserVo(id, name, lastName, email);
                 String resultString = gson.toJson(user);
                 System.out.println(resultString);
                 return "{\"exists\":true, \"user\":" + resultString + "}";
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
+            // return "{\"exists\":0, \"error\": \"Ha ocurrido un error:\"" + e + "}";
             e.printStackTrace();
         }
         return "{\"exists\":0}";
@@ -64,6 +67,11 @@ public class UserController implements UserInterface {
             }
 
             while (result.next()) {
+                System.out.println(result.getMetaData().getColumnName(1));
+                if (result.getMetaData().getColumnName(1) == "RESULT") {
+                    return "{\"result\": \"user already exists\"}";
+                  
+                }
                 int _id = result.getInt("user_id");
                 String _name = result.getString("nombre");
                 String _lastname = result.getString("apellido");
@@ -79,6 +87,6 @@ public class UserController implements UserInterface {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "";
+        return "{\"registered\": false, \"error\": true}";
     }
 }

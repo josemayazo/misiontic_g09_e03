@@ -1,31 +1,22 @@
-let form = document.getElementById("registerForm");
+let form = document.getElementById("loginForm");
 form.onsubmit = function (event) {
     event.preventDefault();
-    registerUser(event);
+    authUser(event);
 }
 
-function registerUser(event) {
+function authUser(event) {
     // event.preventDefault();
+    console.log("Entró a authUser");
 
 
-    let name = document.getElementById("name").value;
-    let lastname = document.getElementById("lastname").value;
-    let email = document.getElementById("email").value;
+    let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
-    let lastname = document.getElementById("lastname").value;
-    let userType = document.getElementById("userType").value;
-    let phonNumber = document.getElementById("phoneNumber").value;
-
     // if (isAnEmail(username) & username !== "" & password !== "") {
 
 
     let formdata = new FormData();
-    formdata.append("email", email);
+    formdata.append("email", username);
     formdata.append("password", password);
-    formdata.append("name", name);
-    formdata.append("lastname", lastname);
-    formdata.append("userType", userType);
-    formdata.append("phoneNumber", phonNumber);
 
     let requestOptions = {
         method: 'POST',
@@ -33,7 +24,7 @@ function registerUser(event) {
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/servi2/ServletUserRegister", requestOptions)
+    fetch("http://localhost:8080/servi2/ServletUserLogin", requestOptions)
         .then(response => response.text())
         .then(result => {
             // check if user creds are ok!
