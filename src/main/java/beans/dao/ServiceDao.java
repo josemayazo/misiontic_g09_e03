@@ -15,7 +15,7 @@ public class ServiceDao {
         try {
             String sql = "SELECT servicio.id_servicio, user.user_id, user.nombre as nombre_usuario, "
                     + "user.apellido as apellido_usuario, servicio.nombre_servicio, servicio.ciudad, "
-                    + "servicio.valor\n"
+                    + "servicio.valor, servicio.descripcion\n"
                     + "FROM servi.servicio\n"
                     + "LEFT JOIN servi.user\n"
                     + "ON servicio.user_id = user.user_id";
@@ -36,7 +36,8 @@ public class ServiceDao {
             String sql = "SELECT servicio.id_servicio, user.user_id, "
                     + "user.nombre as nombre_usuario, "
                     + "user.apellido as apellido_usuario, "
-                    + "servicio.nombre_servicio, servicio.ciudad, servicio.valor\n"
+                    + "servicio.nombre_servicio, servicio.descripcion, "
+                    + "servicio.ciudad, servicio.valor\n"
                     + "FROM servi.servicio\n"
                     + "LEFT JOIN servi.user\n"
                     + "ON servicio.user_id = user.user_id\n"

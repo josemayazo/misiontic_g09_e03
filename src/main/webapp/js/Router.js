@@ -18,3 +18,4 @@ class Router {
         window.history.pushState({}, "done", path);
     }
 }
+//

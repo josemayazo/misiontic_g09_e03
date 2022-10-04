@@ -26,7 +26,7 @@ function loadServices() {
                                     <p class="card-text"> $ ${service.value.toLocaleString('es-CO')}
                                     </p>
                                 </b>
-                                <a href="#" class="btn btn-primary" serviceId=${service.id}>Ver m&aacute;s</a>
+                                <a href="servi.html?service=${service.id}" class="btn btn-primary" serviceId=${service.id}>Ver m&aacute;s</a>
                         </div>
                     </div>
                 </div>

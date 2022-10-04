@@ -39,12 +39,13 @@ public class ServiceController {
                 String username = result.getString("nombre_usuario");
                 String userLastname = result.getString("apellido_usuario");
                 String serviceName = result.getString("nombre_servicio");
+                String serviceDesc = result.getString("descripcion");
                 String city = result.getString("ciudad");
                 Double value = result.getDouble("valor");
 
                 ServiceProviderVo servProv = new ServiceProviderVo(userId, username, userLastname);
 
-                ServiceVo service = new ServiceVo(serviceId, serviceName, servProv, city, value);
+                ServiceVo service = new ServiceVo(serviceId, serviceName, servProv, city, value, serviceDesc);
                 String serviceJson = gson.toJson(service);
                 //String servResult = "{\"id\":" + serviceId + ", \"title\":" + serviceName + ", \"value\":" + value + ", \"city\":" + city + " \"user\":" + servProvJson + "}";
                 //String servResult = "{"+ service + " \"user\":" + servProvJson + "}";
@@ -76,12 +77,13 @@ public class ServiceController {
                 String username = result.getString("nombre_usuario");
                 String userLastname = result.getString("apellido_usuario");
                 String serviceName = result.getString("nombre_servicio");
+                String serviceDesc = result.getString("descripcion");
                 String city = result.getString("ciudad");
                 Double value = result.getDouble("valor");
 
                 ServiceProviderVo servProv = new ServiceProviderVo(userId, username, userLastname);
 
-                ServiceVo service = new ServiceVo(serviceId, serviceName, servProv, city, value);
+                ServiceVo service = new ServiceVo(serviceId, serviceName, servProv, city, value, serviceDesc);
                 String serviceJson = gson.toJson(service);
                 services.add(serviceJson);
             }
