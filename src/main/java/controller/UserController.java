@@ -62,16 +62,15 @@ public class UserController implements UserInterface {
         try {
             result = UserDao.register(this.conn, name, lastname, email, password, phoneNumber, userType);
             ResultSetMetaData resultMetadata = result.getMetaData();
-            if (resultMetadata.getColumnName(1) == "RESULT") {
-                return gson.toJson("{\"result\": \"user already exists\"}");
+
+
+            if (resultMetadata.getColumnCount() == 1) {
+                return "{\"result\": \"user already exists\"}";
             }
 
             while (result.next()) {
                 System.out.println(result.getMetaData().getColumnName(1));
-                if (result.getMetaData().getColumnName(1) == "RESULT") {
-                    return "{\"result\": \"user already exists\"}";
-                  
-                }
+
                 int _id = result.getInt("user_id");
                 String _name = result.getString("nombre");
                 String _lastname = result.getString("apellido");
