@@ -46,7 +46,7 @@ public class UserController implements UserInterface {
                 return "{\"exists\":true, \"user\":" + resultString + "}";
             }
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
+    
             // return "{\"exists\":0, \"error\": \"Ha ocurrido un error:\"" + e + "}";
             e.printStackTrace();
         }

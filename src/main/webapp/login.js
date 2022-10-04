@@ -35,9 +35,9 @@ function authUser(event) {
                 if (parsedResult["exists"]) {
                     // Redirect user to
                     if (parsedResult.user.type === "A") {
-                        document.location.href = "home_prestador.html?user=" + parsedResult.user.id;
-                    } else {
                         document.location.href = "userhome.html?user=" + parsedResult.user.id;
+                    } else {
+                        document.location.href = "home_prestador.html?user=" + parsedResult.user.id;
                     }
                 } else {
                     document.getElementById("login-error").classList.remove("d-none");
